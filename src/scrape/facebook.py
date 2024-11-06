@@ -1,103 +1,126 @@
-from bs4 import BeautifulSoup
-from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from scraper.scraper import Scraper
+from selenium.common.exceptions import TimeoutException, NoSuchElementException
+from scraper.selenium_base import BaseSeleniumScraper
+from typing import Optional, Dict, List
+import time
 
-class FacebookScraper(Scraper):
+class FacebookScraper(BaseSeleniumScraper):
     BASE_URL = 'https://www.facebook.com/search/posts?q={}'
-    ARTICLE_SET = set()
-
-    KEYWORDS = [
-        'Virtual Asset Service Provider', 'Philippine Payments Management Inc.', 'Philpass', 'Pesonet',
-    'Instapay', 'PDS Dealing', 'Payment',
-    'BSP', 'ATM', 'GCash'
-    ]
-
-    def __init__(self, df, email, password):
-        super().__init__(df, self.KEYWORDS)
+    
+    def __init__(self, df, keywords: List[str], email: str, password: str):
+        super().__init__(df, keywords)
         self.email = email
         self.password = password
-        self.logger.info("FacebookScraper initialized")
+        self.article_set = set()
 
     def scrape(self):
-        """Main scrape method to retrieve posts for each keyword."""
-        driver = webdriver.Chrome()
-        self._login(driver)
-
-        for keyword in self.keywords:
-            search_url = self.BASE_URL.format(keyword)
-            self._scrape_keyword(driver, search_url, keyword)
-
-        driver.quit()
-
-    def _login(self, driver):
-        """Log in to Facebook."""
-        driver.get("https://www.facebook.com/login")
-        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "email"))).send_keys(self.email)
-        driver.find_element(By.ID, "pass").send_keys(self.password)
-        driver.find_element(By.NAME, "login").click()
-        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div[role="feed"]')))
-        self.logger.info("Logged in to Facebook")
-
-    def _scrape_keyword(self, driver, search_url, keyword):
-        """Scrape posts related to a specific keyword."""
-        driver.get(search_url)
-        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div[role="feed"]')))
-        self.logger.info(f"Searching for posts with keyword: {keyword}")
-
-        while True:
-            soup = BeautifulSoup(driver.page_source, 'html.parser')
-            posts = self._get_posts(soup)
-
-            for post in posts:
-                post_url = self._get_post_url(post)
-                if post_url in self.ARTICLE_SET:
-                    continue
-
-                post_info = self._extract_post_info(post, post_url, keyword)
-                if post_info:
-                    self.articles.append(post_info)
-                    self.df.add_news('Facebook', post_info)
-                    self.ARTICLE_SET.add(post_url)
-                    self.logger.info(f"Scraped post: {post_url}")
-
-            if not self._scroll_to_load_more(driver):
-                break
-
-    def _get_posts(self, soup):
-        """Retrieve post elements from the page source."""
-        return soup.find_all('div', class_='story_body_container')
-
-    def _get_post_url(self, post):
-        """Extract post URL."""
-        return post.find('a', href=True).get('href') if post.find('a', href=True) else None
-
-    def _extract_post_info(self, post, url, keyword):
-        """Extract post details such as content, timestamp, and author."""
+        """Main scraping method with enhanced error handling."""
         try:
-            content = post.find('div', {'data-ad-comet-preview': True}).text.strip()
-            timestamp = post.find('abbr').get('title', 'Unknown time')
-            author = post.find('h5').text.strip() if post.find('h5') else "Unknown Author"
-            return {
-                'keyword': keyword,
-                'timestamp': timestamp,
-                'author': author,
-                'content': content,
-                'url': url
-            }
+            self.logger.info("Starting Facebook scraper")
+            if not self._login():
+                self.logger.error("Failed to log in to Facebook")
+                return
+
+            for keyword in self.keywords:
+                self._scrape_keyword(keyword)
+                
         except Exception as e:
-            self.logger.error(f"Error extracting post info from {url}: {e}")
-            return None
+            self.logger.error(f"Error during Facebook scraping: {str(e)}")
+        finally:
+            self.driver.quit()
 
-    def _scroll_to_load_more(self, driver):
-        """Scroll to load more posts if available; return False if no more posts."""
+    def _login(self) -> bool:
+        """Enhanced login method with better error handling."""
         try:
-            load_more = driver.find_element(By.CSS_SELECTOR, 'div[aria-label="See more results"]')
-            driver.execute_script("arguments[0].scrollIntoView();", load_more)
-            WebDriverWait(driver, 5).until(EC.staleness_of(load_more))
+            self.driver.get("https://www.facebook.com/login")
+            
+            # Wait for and fill in email
+            email_field = self.wait_for_element((By.ID, "email"))
+            email_field.send_keys(self.email)
+            
+            # Fill in password
+            password_field = self.driver.find_element(By.ID, "pass")
+            password_field.send_keys(self.password)
+            
+            # Click login button
+            login_button = self.driver.find_element(By.NAME, "login")
+            login_button.click()
+            
+            # Wait for feed to confirm successful login
+            self.wait_for_element((By.CSS_SELECTOR, 'div[role="feed"]'))
+            self.logger.info("Successfully logged in to Facebook")
             return True
-        except Exception:
-            self.logger.info("No more results to load.")
+            
+        except TimeoutException:
+            self.logger.error("Timeout while trying to log in")
+            return False
+        except Exception as e:
+            self.logger.error(f"Login failed: {str(e)}")
+            return False
+
+    def _scrape_keyword(self, keyword: str):
+        """Scrape posts for a specific keyword with scroll pagination."""
+        search_url = self.BASE_URL.format(keyword)
+        self.driver.get(search_url)
+        
+        try:
+            feed = self.wait_for_element((By.CSS_SELECTOR, 'div[role="feed"]'))
+            scroll_count = 0
+            max_scrolls = 5  # Limit scrolling to prevent infinite loops
+            
+            while scroll_count < max_scrolls:
+                posts = self._extract_visible_posts()
+                if not posts:
+                    break
+                    
+                for post in posts:
+                    if post['url'] in self.article_set:
+                        continue
+                    
+                    self.save_article(post, 'Facebook')
+                    self.article_set.add(post['url'])
+                
+                if not self._scroll_page():
+                    break
+                    
+                scroll_count += 1
+                time.sleep(2)  # Wait for new content to load
+                
+        except Exception as e:
+            self.logger.error(f"Error scraping keyword {keyword}: {str(e)}")
+
+    def _extract_visible_posts(self) -> List[Dict]:
+        """Extract information from visible posts."""
+        posts = []
+        try:
+            post_elements = self.driver.find_elements(By.CSS_SELECTOR, 'div[role="article"]')
+            
+            for element in post_elements:
+                try:
+                    post_data = {
+                        'content': element.find_element(By.CSS_SELECTOR, 'div[data-ad-preview="message"]').text,
+                        'url': element.find_element(By.CSS_SELECTOR, 'a[href*="/posts/"]').get_attribute('href'),
+                        'timestamp': element.find_element(By.CSS_SELECTOR, 'a[href*="/posts/"] span').text,
+                        'author': element.find_element(By.CSS_SELECTOR, 'h3').text
+                    }
+                    posts.append(post_data)
+                except NoSuchElementException:
+                    continue
+                    
+        except Exception as e:
+            self.logger.error(f"Error extracting posts: {str(e)}")
+            
+        return posts
+
+    def _scroll_page(self) -> bool:
+        """Scroll the page to load more content."""
+        try:
+            last_height = self.driver.execute_script("return document.documentElement.scrollHeight")
+            self.driver.execute_script("window.scrollTo(0, document.documentElement.scrollHeight);")
+            time.sleep(2)
+            new_height = self.driver.execute_script("return document.documentElement.scrollHeight")
+            return new_height > last_height
+        except Exception as e:
+            self.logger.error(f"Error scrolling page: {str(e)}")
             return False

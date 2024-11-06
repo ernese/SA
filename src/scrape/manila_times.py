@@ -1,82 +1,101 @@
-from bs4 import BeautifulSoup
-from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from scraper.scraper import Scraper
+from selenium.common.exceptions import TimeoutException
+from scraper.selenium_base import BaseSeleniumScraper
 from news.news_info import NewsInfo
+from typing import Optional, List
+import time
 
-class ManilaTimesScraper(Scraper):
+class ManilaTimesScraper(BaseSeleniumScraper):
     BASE_URL = 'https://www.manilatimes.net/tag/{}/page/{}'
-    ARTICLE_SET = set()
-
-    KEYWORDS = [
-        'Virtual Asset Service Provider', 'Philippine Payments Management Inc.', 'Philpass', 'Pesonet',
-    'Instapay', 'PDS Dealing', 'Payment',
-    'BSP', 'ATM', 'GCash'
-    ]
-
-    def __init__(self, df):
-        super().__init__(df, self.KEYWORDS)
-        self.logger.info("ManilaTimesScraper initialized")
+    
+    def __init__(self, df, keywords: List[str]):
+        super().__init__(df, keywords)
+        self.article_set = set()
 
     def scrape(self):
-        """Main method to scrape articles for each keyword."""
-        driver = webdriver.Chrome()
-        
-        for keyword in self.keywords:
-            page_count = self._get_page_count(keyword)
-            for page in range(1, page_count + 1):
-                url = self.BASE_URL.format(keyword, page)
-                driver.get(url)
-                WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CLASS_NAME, 'tag-widget')))
-                
-                soup = BeautifulSoup(driver.page_source, 'html.parser')
-                articles = self._get_articles(soup)
+        """Enhanced main scraping method."""
+        try:
+            self.logger.info("Starting Manila Times scraper")
+            for keyword in self.keywords:
+                page_num = 1
+                while self._scrape_page(keyword, page_num):
+                    page_num += 1
+                    
+        except Exception as e:
+            self.logger.error(f"Error during Manila Times scraping: {str(e)}")
+        finally:
+            self.driver.quit()
 
-                for article in articles:
-                    article_url = article.get('href')
-                    if article_url in self.ARTICLE_SET:
-                        continue
-
-                    article_info = self._scrape_article(driver, article_url, keyword)
-                    if article_info:
-                        self.articles.append(article_info)
-                        self.df.add_news('Manila Times', article_info)
-                        self.ARTICLE_SET.add(article_url)
-                        self.logger.info(f"Scraped article: {article_url}")
-
-        driver.quit()
-
-    def _get_page_count(self, keyword):
-        """Determine the number of pages for each keyword."""
-        page_counts = {'Philippine Stock Exchange': 9, 'PSE': 2}  # Example: Update with actual counts
-        return page_counts.get(keyword, 1)
-
-    def _get_articles(self, soup):
-        """Retrieve article links from a search results page."""
-        return soup.find('div', class_='tag-widget').find_all('a', href=True)
-
-    def _scrape_article(self, driver, url, keyword):
-        """Visit and extract information from an individual article."""
-        driver.get(url)
-        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CLASS_NAME, 'article-body-content')))
-        soup = BeautifulSoup(driver.page_source, 'html.parser')
+    def _scrape_page(self, keyword: str, page: int) -> bool:
+        """Scrape a single page of articles."""
+        url = self.BASE_URL.format(keyword, page)
+        self.driver.get(url)
         
         try:
-            title = soup.find('h1', class_='article-title').text.strip()
-            author = soup.find('a', class_='article-author-name').text.strip() if soup.find('a', class_='article-author-name') else "Unknown Author"
-            published_date = soup.find('div', class_='article-publish-time').text.strip()
-            content = [p.text.strip() for p in soup.find('div', 'article-body-content').find_all('p')]
+            # Wait for article container
+            self.wait_for_element((By.CLASS_NAME, 'tag-widget'))
+            
+            # Extract all article links
+            article_links = self.driver.find_elements(By.CSS_SELECTOR, '.tag-widget article a')
+            if not article_links:
+                return False
+                
+            urls = [link.get_attribute('href') for link in article_links]
+            
+            for url in urls:
+                if url in self.article_set:
+                    continue
+                    
+                article_info = self._scrape_article(url, keyword)
+                if article_info:
+                    self.save_article(article_info, 'Manila Times')
+                    self.article_set.add(url)
+                    
+            return True
+            
+        except TimeoutException:
+            self.logger.warning(f"No more pages found for keyword {keyword}")
+            return False
+        except Exception as e:
+            self.logger.error(f"Error scraping page {page} for keyword {keyword}: {str(e)}")
+            return False
 
+    def _scrape_article(self, url: str, keyword: str) -> Optional[NewsInfo]:
+        """Scrape an individual article with enhanced error handling."""
+        try:
+            self.driver.get(url)
+            
+            # Wait for article content
+            self.wait_for_element((By.CLASS_NAME, 'article-body-content'))
+            
+            # Extract article information
+            title = self._safe_get_text('.article-title')
+            author = self._safe_get_text('.article-author-name') or "Unknown Author"
+            date = self._safe_get_text('.article-publish-time')
+            
+            # Extract content paragraphs
+            content_elements = self.driver.find_elements(By.CSS_SELECTOR, '.article-body-content p')
+            content = [elem.text.strip() for elem in content_elements if elem.text.strip()]
+            
             return NewsInfo(
                 keyword=keyword,
-                published_date=published_date,
+                published_date=date,
                 title=title,
                 author=author,
                 section="Manila Times",
-                content=content
+                content=content,
+                url=url
             )
+            
         except Exception as e:
-            self.logger.error(f"Error extracting article info from {url}: {e}")
+            self.logger.error(f"Error scraping article {url}: {str(e)}")
             return None
+
+    def _safe_get_text(self, selector: str) -> str:
+        """Safely get text from an element."""
+        try:
+            element = self.driver.find_element(By.CSS_SELECTOR, selector)
+            return element.text.strip()
+        except Exception:
+            return ""
