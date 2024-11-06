@@ -29,9 +29,9 @@ def run_scrapers():
         # Initialize scrapers
         manila_scraper = ManilaTimesScraper(news_df, KEYWORDS)
         bilyonaryo_scraper = BilyonaryoScraper(news_df, KEYWORDS)
-        facebook_scraper = FacebookScraper(news_df, facebook_email, facebook_password, KEYWORDS)
+        #facebook_scraper = FacebookScraper(news_df, facebook_email, facebook_password, KEYWORDS)
         
-        scrapers = [manila_scraper, bilyonaryo_scraper, facebook_scraper]
+        scrapers = [manila_scraper, bilyonaryo_scraper]
         
         # Run each scraper
         for scraper in scrapers:
