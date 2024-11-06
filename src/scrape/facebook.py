@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
-from scraper.selenium_base import BaseSeleniumScraper
+from selenium_base import BaseSeleniumScraper
 from typing import Optional, Dict, List
 import time
 

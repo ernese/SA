@@ -1,17 +1,12 @@
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
-from scraper.selenium_base import BaseSeleniumScraper
-from news.news_info import NewsInfo
-from typing import Optional, List
-import time
+from typing import Optional
+from src.scrape.base import BaseSeleniumScraper
+from article.manager import NewsArticleManager  # Import NewsArticleManager
+from article.article import NewsArticle  # Import NewsArticle for saving articles
 
 class ManilaTimesScraper(BaseSeleniumScraper):
     BASE_URL = 'https://www.manilatimes.net/tag/{}/page/{}'
-    
-    def __init__(self, df, keywords: List[str]):
-        super().__init__(df, keywords)
-        self.article_set = set()
 
     def scrape(self):
         """Enhanced main scraping method."""
@@ -21,7 +16,6 @@ class ManilaTimesScraper(BaseSeleniumScraper):
                 page_num = 1
                 while self._scrape_page(keyword, page_num):
                     page_num += 1
-                    
         except Exception as e:
             self.logger.error(f"Error during Manila Times scraping: {str(e)}")
         finally:
@@ -49,11 +43,20 @@ class ManilaTimesScraper(BaseSeleniumScraper):
                     
                 article_info = self._scrape_article(url, keyword)
                 if article_info:
-                    self.save_article(article_info, 'Manila Times')
+                    # Use NewsArticleManager to save articles
+                    self.manager.add_news(
+                        news_source='Manila Times',
+                        keyword=article_info.keyword,
+                        date=article_info.published_date,
+                        headline=article_info.title,
+                        byline=article_info.author,
+                        section=article_info.section,
+                        content=" ".join(article_info.content),
+                        tags=[article_info.keyword]
+                    )
                     self.article_set.add(url)
                     
             return True
-            
         except TimeoutException:
             self.logger.warning(f"No more pages found for keyword {keyword}")
             return False
@@ -61,7 +64,7 @@ class ManilaTimesScraper(BaseSeleniumScraper):
             self.logger.error(f"Error scraping page {page} for keyword {keyword}: {str(e)}")
             return False
 
-    def _scrape_article(self, url: str, keyword: str) -> Optional[NewsInfo]:
+    def _scrape_article(self, url: str, keyword: str) -> Optional[NewsArticle]:
         """Scrape an individual article with enhanced error handling."""
         try:
             self.driver.get(url)
@@ -78,24 +81,14 @@ class ManilaTimesScraper(BaseSeleniumScraper):
             content_elements = self.driver.find_elements(By.CSS_SELECTOR, '.article-body-content p')
             content = [elem.text.strip() for elem in content_elements if elem.text.strip()]
             
-            return NewsInfo(
+            return NewsArticle(
                 keyword=keyword,
-                published_date=date,
-                title=title,
-                author=author,
+                date=date,
+                headline=title,
+                byline=author,
                 section="Manila Times",
-                content=content,
-                url=url
+                content=" ".join(content)
             )
-            
         except Exception as e:
             self.logger.error(f"Error scraping article {url}: {str(e)}")
             return None
-
-    def _safe_get_text(self, selector: str) -> str:
-        """Safely get text from an element."""
-        try:
-            element = self.driver.find_element(By.CSS_SELECTOR, selector)
-            return element.text.strip()
-        except Exception:
-            return ""

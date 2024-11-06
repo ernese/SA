@@ -6,11 +6,10 @@ import requests
 from bs4 import BeautifulSoup
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
-from news.news_df import NewsDataFrame
-from news.news_info import NewsInfo
+from article.manager import NewsArticleManager
+from article.article import NewsArticle
 
 class BaseScraper(ABC):
-    """Enhanced base scraper with robust error handling and rate limiting."""
     
     HEADERS = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
@@ -19,21 +18,20 @@ class BaseScraper(ABC):
         'Connection': 'keep-alive',
     }
 
-    def __init__(self, df: NewsDataFrame, keywords: List[str], rate_limit: float = 1.0):
+    def __init__(self, article_manager: NewsArticleManager, keywords: List[str], rate_limit: float = 1.0):
         """
         Initialize scraper with enhanced features.
         
         Args:
-            df: NewsDataFrame to store results
+            article_manager: Instance of NewsArticleManager to store results
             keywords: List of keywords to search
             rate_limit: Minimum time between requests in seconds
         """
-        self.df = df
+        self.article_manager = article_manager
         self.keywords = keywords
         self.rate_limit = rate_limit
         self.last_request_time = 0
         self.session = self._create_session()
-        self.articles = []
         self.logger = self._initialize_logger()
 
     def _create_session(self) -> requests.Session:
@@ -82,12 +80,20 @@ class BaseScraper(ABC):
             self.logger.error(f"Error fetching {url}: {str(e)}")
             return None
 
-    def save_article(self, article: NewsInfo, source: str):
+    def save_article(self, article: NewsArticle, source: str):
         """Save article with error handling."""
         try:
-            self.articles.append(article)
-            self.df.add_news(source, article)
-            self.logger.info(f"Saved article: {article.title}")
+            self.article_manager.add_news(
+                news_source=source,
+                keyword=article.keyword,
+                date=article.date,
+                headline=article.headline,
+                byline=article.byline,
+                section=article.section,
+                content=article.content,
+                tags=[article.keyword]  # You can add more tags here
+            )
+            self.logger.info(f"Saved article: {article.headline}")
         except Exception as e:
             self.logger.error(f"Error saving article: {str(e)}")
 

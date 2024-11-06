@@ -1,14 +1,14 @@
 from bs4 import BeautifulSoup
 from typing import List, Optional
-from scraper.base import BaseScraper
-from news.news_info import NewsInfo
-from news.news_df import NewsDataFrame
+from src.scrape.base import BaseScraper
+from article.manager import NewsArticleManager  # Import NewsArticleManager
+from article.article import NewsArticle  # Import NewsArticle for saving articles
 
 class BilyonaryoScraper(BaseScraper):
     BASE_URL = 'https://bilyonaryo.com/'
-    
-    def __init__(self, df: NewsDataFrame, keywords: List[str]):
-        super().__init__(df, keywords, rate_limit=1.5)  # 1.5 second delay between requests
+
+    def __init__(self, manager: NewsArticleManager, keywords: List[str]):
+        super().__init__(manager, keywords, rate_limit=1.5)
         self.article_set = set()
 
     def scrape(self):
@@ -16,7 +16,7 @@ class BilyonaryoScraper(BaseScraper):
         self.logger.info("Starting Bilyonaryo scraper")
         for keyword in self.keywords:
             self._scrape_keyword(keyword)
-        self.logger.info(f"Completed scraping {len(self.articles)} articles")
+        self.logger.info(f"Completed scraping {len(self.manager.df)} articles")
 
     def _scrape_keyword(self, keyword: str):
         """Scrape articles for a single keyword."""
@@ -44,13 +44,23 @@ class BilyonaryoScraper(BaseScraper):
                 
                 news_info = self._extract_article_info(article_response.text, keyword, url)
                 if news_info:
-                    self.save_article(news_info, 'Bilyonaryo')
+                    # Use the NewsArticleManager to save articles
+                    self.manager.add_news(
+                        news_source='Bilyonaryo',
+                        keyword=news_info.keyword,
+                        date=news_info.published_date,
+                        headline=news_info.title,
+                        byline=news_info.author,
+                        section=news_info.section,
+                        content=" ".join(news_info.content),
+                        tags=[news_info.keyword]
+                    )
                     self.article_set.add(url)
                     
             except Exception as e:
                 self.logger.error(f"Error processing article {url}: {str(e)}")
 
-    def _extract_article_info(self, html: str, keyword: str, url: str) -> Optional[NewsInfo]:
+    def _extract_article_info(self, html: str, keyword: str, url: str) -> Optional[NewsArticle]:
         """Extract article information with enhanced error handling."""
         try:
             soup = BeautifulSoup(html, 'html.parser')
@@ -63,17 +73,15 @@ class BilyonaryoScraper(BaseScraper):
             content_div = soup.find('div', class_='entry-content')
             if not content_div:
                 return None
-                
             content = [p.text.strip() for p in content_div.find_all('p') if p.text.strip()]
             
-            return NewsInfo(
+            return NewsArticle(
                 keyword=keyword,
-                published_date=date,
-                title=title,
-                author=author,
+                date=date,
+                headline=title,
+                byline=author,
                 section='Bilyonaryo',
-                content=content,
-                url=url
+                content=" ".join(content)
             )
             
         except Exception as e:
