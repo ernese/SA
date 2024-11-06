@@ -2,7 +2,7 @@ from datetime import datetime
 from typing import Optional, Set
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
-from selenium_base import SeleniumBaseScraper
+from scrape.selenium_base import SeleniumBaseScraper  # Updated import path
 from comp.article import NewsArticle
 
 class ManilaTimesScraper(SeleniumBaseScraper):
