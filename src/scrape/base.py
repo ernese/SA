@@ -3,7 +3,6 @@ import logging
 import time
 from typing import List, Optional
 import requests
-from bs4 import BeautifulSoup
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from utils import create_logger 
@@ -11,7 +10,6 @@ from comp.article import NewsArticle
 from comp.manager import NewsArticleManager
 
 class BaseScraper(ABC):
-    
     HEADERS = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
@@ -27,29 +25,29 @@ class BaseScraper(ABC):
         self.logger = create_logger(self.__class__.__name__)
         self.session = self._create_session()
 
-    def _create_session(self):
-        """Create a session with retry strategy."""
+    def _create_session(self) -> requests.Session:
+        """Create a requests session with retry strategy."""
         session = requests.Session()
-        retry = Retry(
+        retry_strategy = Retry(
             total=3,
             backoff_factor=1,
             status_forcelist=[500, 502, 503, 504],
         )
-        adapter = HTTPAdapter(max_retries=retry)
+        adapter = HTTPAdapter(max_retries=retry_strategy)
         session.mount('http://', adapter)
         session.mount('https://', adapter)
         session.headers.update(self.HEADERS)
         return session
 
     def _rate_limit_request(self):
-        """Implement rate limiting between requests."""
+        """Enforce rate limiting between requests."""
         elapsed = time.time() - self.last_request_time
         if elapsed < self.rate_limit:
             time.sleep(self.rate_limit - elapsed)
         self.last_request_time = time.time()
 
     def make_request(self, url: str) -> Optional[requests.Response]:
-        """Make a rate-limited request with error handling."""
+        """Make a rate-limited HTTP request."""
         self._rate_limit_request()
         try:
             response = self.session.get(url)
@@ -60,7 +58,7 @@ class BaseScraper(ABC):
             return None
 
     def save_article(self, article: NewsArticle, source: str):
-        """Save article with error handling."""
+        """Save an article with error handling."""
         try:
             self.article_manager.add_news(
                 news_source=source,
@@ -70,7 +68,7 @@ class BaseScraper(ABC):
                 byline=article.byline,
                 section=article.section,
                 content=article.content,
-                url=article.url,  # Added URL field
+                url=article.url,  # Ensures URL is saved
                 tags=[article.keyword]
             )
             self.logger.info(f"Saved article: {article.headline}")
@@ -85,5 +83,5 @@ class BaseScraper(ABC):
 
     @abstractmethod
     def scrape(self):
-        """Abstract method to implement scraping logic."""
+        """Abstract method for implementing the scraping logic."""
         pass

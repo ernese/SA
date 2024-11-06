@@ -1,3 +1,6 @@
+from typing import Optional
+from save import Saver
+
 class NewsArticle:
     """
     Represents information about a news article.
@@ -33,14 +36,14 @@ class NewsArticle:
         self.url = url
         self.word_count = len(content.split())
 
-    def save(self, saver: Saver) -> None:
+    def save(self, saver: "Saver") -> None:
         """
         Saves the news article using the provided Saver object.
         
         Parameters:
             saver (Saver): An instance of the Saver class responsible for saving the article.
         """
-        saver.save()
+        saver.save(self)
 
     def __str__(self) -> str:
         """Returns a string representation of the article."""
@@ -51,3 +54,5 @@ class NewsArticle:
         return (f"NewsArticle(keyword='{self.keyword}', date='{self.date}', "
                 f"headline='{self.headline}', byline='{self.byline}', "
                 f"section='{self.section}', content='{self.content[:50]}...')")
+
+

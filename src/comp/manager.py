@@ -1,4 +1,5 @@
 import pandas as pd
+from save import Saver
 
 class NewsArticleManager:
     """
@@ -45,16 +46,33 @@ class NewsArticleManager:
         except KeyError as e:
             print(f"Error adding news: Unrecognized source {news_source}. Error: {e}")
 
-    def save(self, path_csv='./data/news_info.csv', path_json='./data/news_info.json'):
+    def save(self, saver: "Saver") -> None:
+        """
+        Saves the DataFrame using the provided Saver object.
+        
+        Parameters:
+            saver (Saver): An instance of the Saver class responsible for saving.
+        """
+        saver.save(self.df)
+
+class CSVJSONSaver(Saver):
+    """
+    Concrete implementation of Saver to save DataFrame as CSV and JSON.
+    """
+
+    def __init__(self, path_csv='./data/news_info.csv', path_json='./data/news_info.json'):
+        self.path_csv = path_csv
+        self.path_json = path_json
+
+    def save(self, data: pd.DataFrame) -> None:
         """
         Saves the DataFrame to CSV and JSON files.
         
         Parameters:
-            path_csv (str): Path to save CSV file.
-            path_json (str): Path to save JSON file.
+            data (pd.DataFrame): DataFrame containing the articles to be saved.
         """
         try:
-            self.df.to_csv(path_csv, index=False)
-            self.df.to_json(path_json, orient='records', lines=True)
+            data.to_csv(self.path_csv, index=False)
+            data.to_json(self.path_json, orient='records', lines=True)
         except Exception as e:
             print(f"Error saving data: {e}")

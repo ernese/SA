@@ -16,20 +16,12 @@ class SeleniumBaseScraper(BaseScraper):
         self.driver: Optional[WebDriver] = None
 
     def _initialize_driver(self) -> None:
-        """Initialize the Selenium WebDriver if not already initialized."""
+        """Initialize Selenium WebDriver if not already done."""
         if not self.driver:
             self.driver = create_selenium_driver(headless=self.headless)
 
     def navigate_to_page(self, url: str) -> bool:
-        """
-        Navigate to a page using Selenium with error handling.
-        
-        Args:
-            url: URL to navigate to
-            
-        Returns:
-            bool: True if navigation was successful, False otherwise
-        """
+        """Navigate to a webpage with error handling."""
         self._rate_limit_request()
         try:
             self._initialize_driver()
@@ -40,17 +32,7 @@ class SeleniumBaseScraper(BaseScraper):
             return False
 
     def wait_and_get_element(self, by: By, selector: str, timeout: int = 10) -> Optional[WebElement]:
-        """
-        Wait for and return an element.
-        
-        Args:
-            by: Selenium By strategy
-            selector: Element selector
-            timeout: Maximum time to wait in seconds
-            
-        Returns:
-            Optional[WebElement]: The found element or None
-        """
+        """Wait for an element and return it if found."""
         try:
             return wait_for_element(self.driver, (by, selector), timeout)
         except TimeoutException:
@@ -58,7 +40,7 @@ class SeleniumBaseScraper(BaseScraper):
             return None
 
     def get_page_source(self) -> Optional[str]:
-        """Get the current page source with error handling."""
+        """Get page source with error handling."""
         try:
             return self.driver.page_source
         except WebDriverException as e:
