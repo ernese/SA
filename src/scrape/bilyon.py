@@ -1,8 +1,6 @@
-from bs4 import BeautifulSoup
-from typing import List, Optional
-from src.scrape.base import BaseScraper
-from article.manager import NewsArticleManager  # Import NewsArticleManager
-from article.article import NewsArticle  # Import NewsArticle for saving articles
+from base import BaseScraper
+from article.manager import NewsArticleManager
+from article.article import NewsArticle
 
 class BilyonaryoScraper(BaseScraper):
     BASE_URL = 'https://bilyonaryo.com/'

@@ -1,9 +1,9 @@
 import os
 import logging
 from article.manager import NewsArticleManager
-from src.scrape.manila_times import ManilaTimesScraper
-from src.scrape.bilyon import BilyonaryoScraper
-from src.scrape.facebook import FacebookScraper
+from scrape.manila_times import ManilaTimesScraper
+from scrape.bilyon import BilyonaryoScraper
+#from scrape.facebook import FacebookScraper
 
 # Initialize logging
 logging.basicConfig(level=logging.INFO)

@@ -1,9 +1,6 @@
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
-from typing import Optional
-from src.scrape.base import BaseSeleniumScraper
-from article.manager import NewsArticleManager  # Import NewsArticleManager
-from article.article import NewsArticle  # Import NewsArticle for saving articles
+from selenium_base import BaseSeleniumScraper
 
 class ManilaTimesScraper(BaseSeleniumScraper):
     BASE_URL = 'https://www.manilatimes.net/tag/{}/page/{}'
