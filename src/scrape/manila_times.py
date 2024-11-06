@@ -1,91 +1,118 @@
+from datetime import datetime
+from typing import Optional, Set
 from selenium.webdriver.common.by import By
-from selenium.common.exceptions import TimeoutException
-from selenium_base import BaseSeleniumScraper
+from selenium.common.exceptions import TimeoutException, NoSuchElementException
+from selenium_base import SeleniumBaseScraper
+from comp.article import NewsArticle
 
-class ManilaTimesScraper(BaseSeleniumScraper):
-    BASE_URL = 'https://www.manilatimes.net/tag/{}/page/{}'
+class ManilaTimesScraper(SeleniumBaseScraper):
+    """Scraper for Manila Times news articles."""
+    
+    BASE_URL = 'https://www.manilatimes.net/search?q={}'  # Updated to use search instead of tags
+    
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.scraped_urls: Set[str] = set()
 
-    def scrape(self):
-        """Enhanced main scraping method."""
+    def scrape(self) -> None:
+        """Main scraping method that processes all keywords."""
         try:
             self.logger.info("Starting Manila Times scraper")
             for keyword in self.keywords:
-                page_num = 1
-                while self._scrape_page(keyword, page_num):
-                    page_num += 1
+                self._scrape_keyword(keyword)
         except Exception as e:
             self.logger.error(f"Error during Manila Times scraping: {str(e)}")
         finally:
-            self.driver.quit()
+            self.__exit__(None, None, None)
 
-    def _scrape_page(self, keyword: str, page: int) -> bool:
-        """Scrape a single page of articles."""
-        url = self.BASE_URL.format(keyword, page)
-        self.driver.get(url)
-        
+    def _scrape_keyword(self, keyword: str) -> None:
+        """Scrape all articles for a specific keyword."""
+        url = self.BASE_URL.format(keyword.replace(' ', '+'))
+        if not self.navigate_to_page(url):
+            return
+
         try:
-            # Wait for article container
-            self.wait_for_element((By.CLASS_NAME, 'tag-widget'))
+            # Wait for search results
+            articles_container = self.wait_and_get_element(
+                By.CLASS_NAME, 'listing-page-news', timeout=15
+            )
+            if not articles_container:
+                self.logger.warning(f"No articles found for keyword: {keyword}")
+                return
+
+            # Get all article links
+            article_links = self.driver.find_elements(
+                By.CSS_SELECTOR, '.listing-page-news article a.article-title'
+            )
             
-            # Extract all article links
-            article_links = self.driver.find_elements(By.CSS_SELECTOR, '.tag-widget article a')
-            if not article_links:
-                return False
-                
-            urls = [link.get_attribute('href') for link in article_links]
-            
-            for url in urls:
-                if url in self.article_set:
-                    continue
-                    
-                article_info = self._scrape_article(url, keyword)
-                if article_info:
-                    # Use NewsArticleManager to save articles
-                    self.manager.add_news(
-                        news_source='Manila Times',
-                        keyword=article_info.keyword,
-                        date=article_info.published_date,
-                        headline=article_info.title,
-                        byline=article_info.author,
-                        section=article_info.section,
-                        content=" ".join(article_info.content),
-                        tags=[article_info.keyword]
-                    )
-                    self.article_set.add(url)
-                    
-            return True
-        except TimeoutException:
-            self.logger.warning(f"No more pages found for keyword {keyword}")
-            return False
+            for link in article_links:
+                try:
+                    article_url = link.get_attribute('href')
+                    if article_url and article_url not in self.scraped_urls:
+                        if article := self._scrape_article(article_url, keyword):
+                            self.save_article(article, "Manila Times")
+                            self.scraped_urls.add(article_url)
+                except Exception as e:
+                    self.logger.error(f"Error processing article link: {str(e)}")
+
         except Exception as e:
-            self.logger.error(f"Error scraping page {page} for keyword {keyword}: {str(e)}")
-            return False
+            self.logger.error(f"Error scraping keyword {keyword}: {str(e)}")
 
     def _scrape_article(self, url: str, keyword: str) -> Optional[NewsArticle]:
-        """Scrape an individual article with enhanced error handling."""
+        """Scrape an individual article."""
+        if not self.navigate_to_page(url):
+            return None
+
         try:
-            self.driver.get(url)
-            
             # Wait for article content
-            self.wait_for_element((By.CLASS_NAME, 'article-body-content'))
-            
+            if not self.wait_and_get_element(By.CLASS_NAME, 'article-body-content', timeout=15):
+                return None
+
             # Extract article information
-            title = self._safe_get_text('.article-title')
-            author = self._safe_get_text('.article-author-name') or "Unknown Author"
-            date = self._safe_get_text('.article-publish-time')
+            headline = self._get_text('.article-title')
+            byline = self._get_text('.article-author-name') or "Unknown Author"
+            date_str = self._get_text('.article-date')
+            section = self._get_text('.article-section') or "News"
             
-            # Extract content paragraphs
-            content_elements = self.driver.find_elements(By.CSS_SELECTOR, '.article-body-content p')
-            content = [elem.text.strip() for elem in content_elements if elem.text.strip()]
-            
+            # Parse date
+            try:
+                date = datetime.strptime(date_str, '%B %d, %Y').date()
+            except (ValueError, TypeError):
+                self.logger.warning(f"Could not parse date: {date_str}")
+                date = None
+
+            # Get article content
+            content_elements = self.driver.find_elements(
+                By.CSS_SELECTOR, '.article-body-content p'
+            )
+            content = ' '.join(
+                elem.text.strip() 
+                for elem in content_elements 
+                if elem.text.strip()
+            )
+
+            if not (headline and content):
+                self.logger.warning(f"Missing required content for article: {url}")
+                return None
+
             return NewsArticle(
                 keyword=keyword,
                 date=date,
-                headline=title,
-                byline=author,
-                section="Manila Times",
-                content=" ".join(content)
+                headline=headline,
+                byline=byline,
+                section=section,
+                content=content,
+                url=url
             )
+
         except Exception as e:
             self.logger.error(f"Error scraping article {url}: {str(e)}")
+            return None
+
+    def _get_text(self, selector: str) -> Optional[str]:
+        """Safely extract text content from an element."""
+        try:
+            element = self.driver.find_element(By.CSS_SELECTOR, selector)
+            return element.text.strip()
+        except NoSuchElementException:
             return None

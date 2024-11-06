@@ -1,6 +1,6 @@
 import os
 import logging
-from article.manager import NewsArticleManager
+from comp.manager import NewsArticleManager
 from scrape.manila_times import ManilaTimesScraper
 from scrape.bilyon import BilyonaryoScraper
 #from scrape.facebook import FacebookScraper

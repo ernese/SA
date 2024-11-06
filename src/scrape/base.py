@@ -6,8 +6,9 @@ import requests
 from bs4 import BeautifulSoup
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
-from article.manager import NewsArticleManager
-from article.article import NewsArticle
+from utils import create_logger
+from comp.article import NewsArticle
+from comp.manager import NewsArticleManager
 
 class BaseScraper(ABC):
     
@@ -19,48 +20,26 @@ class BaseScraper(ABC):
     }
 
     def __init__(self, article_manager: NewsArticleManager, keywords: List[str], rate_limit: float = 1.0):
-        """
-        Initialize scraper with enhanced features.
-        
-        Args:
-            article_manager: Instance of NewsArticleManager to store results
-            keywords: List of keywords to search
-            rate_limit: Minimum time between requests in seconds
-        """
         self.article_manager = article_manager
         self.keywords = keywords
         self.rate_limit = rate_limit
         self.last_request_time = 0
+        self.logger = create_logger(self.__class__.__name__)
         self.session = self._create_session()
-        self.logger = self._initialize_logger()
 
-    def _create_session(self) -> requests.Session:
-        """Create a requests session with retry mechanism."""
+    def _create_session(self):
+        """Create a session with retry strategy."""
         session = requests.Session()
-        retry_strategy = Retry(
+        retry = Retry(
             total=3,
-            backoff_factor=0.5,
-            status_forcelist=[500, 502, 503, 504]
+            backoff_factor=1,
+            status_forcelist=[500, 502, 503, 504],
         )
-        adapter = HTTPAdapter(max_retries=retry_strategy)
-        session.mount("http://", adapter)
-        session.mount("https://", adapter)
+        adapter = HTTPAdapter(max_retries=retry)
+        session.mount('http://', adapter)
+        session.mount('https://', adapter)
         session.headers.update(self.HEADERS)
         return session
-
-    def _initialize_logger(self) -> logging.Logger:
-        """Initialize logger with enhanced formatting."""
-        logger = logging.getLogger(self.__class__.__name__)
-        if not logger.handlers:
-            handler = logging.StreamHandler()
-            formatter = logging.Formatter(
-                '%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                datefmt='%Y-%m-%d %H:%M:%S'
-            )
-            handler.setFormatter(formatter)
-            logger.addHandler(handler)
-            logger.setLevel(logging.INFO)
-        return logger
 
     def _rate_limit_request(self):
         """Implement rate limiting between requests."""
@@ -91,11 +70,18 @@ class BaseScraper(ABC):
                 byline=article.byline,
                 section=article.section,
                 content=article.content,
-                tags=[article.keyword]  # You can add more tags here
+                url=article.url,  # Added URL field
+                tags=[article.keyword]
             )
             self.logger.info(f"Saved article: {article.headline}")
         except Exception as e:
             self.logger.error(f"Error saving article: {str(e)}")
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.session.close()
 
     @abstractmethod
     def scrape(self):
