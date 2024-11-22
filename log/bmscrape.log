@@ -1,0 +1,811 @@
+2024-11-22 12:33:18,802 - INFO - Loaded 667 keywords.
+2024-11-22 12:33:19,773 - INFO - Initialized Chrome WebDriver successfully.
+2024-11-22 12:33:25,014 - INFO - Navigated to https://businessmirror.com.ph/business/
+2024-11-22 12:33:25,014 - INFO - Scraping page 1
+2024-11-22 12:33:25,031 - INFO - Found 35 articles on the current page.
+2024-11-22 12:33:25,039 - WARNING - Missing elements in an article: Message: no such element: Unable to locate element: {"method":"css selector","selector":"h2.entry-title a"}
+  (Session info: chrome=131.0.6778.86); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF6B63D6CB5+28821]
+	(No symbol) [0x00007FF6B6343840]
+	(No symbol) [0x00007FF6B61E578A]
+	(No symbol) [0x00007FF6B62391BE]
+	(No symbol) [0x00007FF6B62394AC]
+	(No symbol) [0x00007FF6B622C52C]
+	(No symbol) [0x00007FF6B625F33F]
+	(No symbol) [0x00007FF6B622C3F6]
+	(No symbol) [0x00007FF6B625F510]
+	(No symbol) [0x00007FF6B627F412]
+	(No symbol) [0x00007FF6B625F0A3]
+	(No symbol) [0x00007FF6B622A778]
+	(No symbol) [0x00007FF6B622B8E1]
+	GetHandleVerifier [0x00007FF6B670FCAD+3408013]
+	GetHandleVerifier [0x00007FF6B672741F+3504127]
+	GetHandleVerifier [0x00007FF6B671B5FD+3455453]
+	GetHandleVerifier [0x00007FF6B649BDBB+835995]
+	(No symbol) [0x00007FF6B634EB5F]
+	(No symbol) [0x00007FF6B634A814]
+	(No symbol) [0x00007FF6B634A9AD]
+	(No symbol) [0x00007FF6B633A199]
+	BaseThreadInitThunk [0x00007FFC7726259D+29]
+	RtlUserThreadStart [0x00007FFC77D6AF38+40]
+
+2024-11-22 12:33:25,044 - WARNING - Missing elements in an article: Message: no such element: Unable to locate element: {"method":"css selector","selector":"h2.entry-title a"}
+  (Session info: chrome=131.0.6778.86); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF6B63D6CB5+28821]
+	(No symbol) [0x00007FF6B6343840]
+	(No symbol) [0x00007FF6B61E578A]
+	(No symbol) [0x00007FF6B62391BE]
+	(No symbol) [0x00007FF6B62394AC]
+	(No symbol) [0x00007FF6B622C52C]
+	(No symbol) [0x00007FF6B625F33F]
+	(No symbol) [0x00007FF6B622C3F6]
+	(No symbol) [0x00007FF6B625F510]
+	(No symbol) [0x00007FF6B627F412]
+	(No symbol) [0x00007FF6B625F0A3]
+	(No symbol) [0x00007FF6B622A778]
+	(No symbol) [0x00007FF6B622B8E1]
+	GetHandleVerifier [0x00007FF6B670FCAD+3408013]
+	GetHandleVerifier [0x00007FF6B672741F+3504127]
+	GetHandleVerifier [0x00007FF6B671B5FD+3455453]
+	GetHandleVerifier [0x00007FF6B649BDBB+835995]
+	(No symbol) [0x00007FF6B634EB5F]
+	(No symbol) [0x00007FF6B634A814]
+	(No symbol) [0x00007FF6B634A9AD]
+	(No symbol) [0x00007FF6B633A199]
+	BaseThreadInitThunk [0x00007FFC7726259D+29]
+	RtlUserThreadStart [0x00007FFC77D6AF38+40]
+
+2024-11-22 12:33:25,050 - WARNING - Missing elements in an article: Message: no such element: Unable to locate element: {"method":"css selector","selector":"h2.entry-title a"}
+  (Session info: chrome=131.0.6778.86); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF6B63D6CB5+28821]
+	(No symbol) [0x00007FF6B6343840]
+	(No symbol) [0x00007FF6B61E578A]
+	(No symbol) [0x00007FF6B62391BE]
+	(No symbol) [0x00007FF6B62394AC]
+	(No symbol) [0x00007FF6B622C52C]
+	(No symbol) [0x00007FF6B625F33F]
+	(No symbol) [0x00007FF6B622C3F6]
+	(No symbol) [0x00007FF6B625F510]
+	(No symbol) [0x00007FF6B627F412]
+	(No symbol) [0x00007FF6B625F0A3]
+	(No symbol) [0x00007FF6B622A778]
+	(No symbol) [0x00007FF6B622B8E1]
+	GetHandleVerifier [0x00007FF6B670FCAD+3408013]
+	GetHandleVerifier [0x00007FF6B672741F+3504127]
+	GetHandleVerifier [0x00007FF6B671B5FD+3455453]
+	GetHandleVerifier [0x00007FF6B649BDBB+835995]
+	(No symbol) [0x00007FF6B634EB5F]
+	(No symbol) [0x00007FF6B634A814]
+	(No symbol) [0x00007FF6B634A9AD]
+	(No symbol) [0x00007FF6B633A199]
+	BaseThreadInitThunk [0x00007FFC7726259D+29]
+	RtlUserThreadStart [0x00007FFC77D6AF38+40]
+
+2024-11-22 12:33:25,055 - WARNING - Missing elements in an article: Message: no such element: Unable to locate element: {"method":"css selector","selector":"h2.entry-title a"}
+  (Session info: chrome=131.0.6778.86); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF6B63D6CB5+28821]
+	(No symbol) [0x00007FF6B6343840]
+	(No symbol) [0x00007FF6B61E578A]
+	(No symbol) [0x00007FF6B62391BE]
+	(No symbol) [0x00007FF6B62394AC]
+	(No symbol) [0x00007FF6B622C52C]
+	(No symbol) [0x00007FF6B625F33F]
+	(No symbol) [0x00007FF6B622C3F6]
+	(No symbol) [0x00007FF6B625F510]
+	(No symbol) [0x00007FF6B627F412]
+	(No symbol) [0x00007FF6B625F0A3]
+	(No symbol) [0x00007FF6B622A778]
+	(No symbol) [0x00007FF6B622B8E1]
+	GetHandleVerifier [0x00007FF6B670FCAD+3408013]
+	GetHandleVerifier [0x00007FF6B672741F+3504127]
+	GetHandleVerifier [0x00007FF6B671B5FD+3455453]
+	GetHandleVerifier [0x00007FF6B649BDBB+835995]
+	(No symbol) [0x00007FF6B634EB5F]
+	(No symbol) [0x00007FF6B634A814]
+	(No symbol) [0x00007FF6B634A9AD]
+	(No symbol) [0x00007FF6B633A199]
+	BaseThreadInitThunk [0x00007FFC7726259D+29]
+	RtlUserThreadStart [0x00007FFC77D6AF38+40]
+
+2024-11-22 12:33:25,061 - WARNING - Missing elements in an article: Message: no such element: Unable to locate element: {"method":"css selector","selector":"h2.entry-title a"}
+  (Session info: chrome=131.0.6778.86); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF6B63D6CB5+28821]
+	(No symbol) [0x00007FF6B6343840]
+	(No symbol) [0x00007FF6B61E578A]
+	(No symbol) [0x00007FF6B62391BE]
+	(No symbol) [0x00007FF6B62394AC]
+	(No symbol) [0x00007FF6B622C52C]
+	(No symbol) [0x00007FF6B625F33F]
+	(No symbol) [0x00007FF6B622C3F6]
+	(No symbol) [0x00007FF6B625F510]
+	(No symbol) [0x00007FF6B627F412]
+	(No symbol) [0x00007FF6B625F0A3]
+	(No symbol) [0x00007FF6B622A778]
+	(No symbol) [0x00007FF6B622B8E1]
+	GetHandleVerifier [0x00007FF6B670FCAD+3408013]
+	GetHandleVerifier [0x00007FF6B672741F+3504127]
+	GetHandleVerifier [0x00007FF6B671B5FD+3455453]
+	GetHandleVerifier [0x00007FF6B649BDBB+835995]
+	(No symbol) [0x00007FF6B634EB5F]
+	(No symbol) [0x00007FF6B634A814]
+	(No symbol) [0x00007FF6B634A9AD]
+	(No symbol) [0x00007FF6B633A199]
+	BaseThreadInitThunk [0x00007FFC7726259D+29]
+	RtlUserThreadStart [0x00007FFC77D6AF38+40]
+
+2024-11-22 12:33:25,858 - INFO - Keyword '2c2p philippines, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,858 - INFO - Keyword '2c2p; 2c2p ph; 2c2p philippines': Found 0 matching articles on this page.
+2024-11-22 12:33:25,858 - INFO - Keyword '4gives': Found 0 matching articles on this page.
+2024-11-22 12:33:25,858 - INFO - Keyword '4gives lending services corp.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,858 - INFO - Keyword '4gives lending services corp.; splitmo; splitmoph; splitmo philippines; splitmotm': Found 0 matching articles on this page.
+2024-11-22 12:33:25,858 - INFO - Keyword '8nexity technology corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,858 - INFO - Keyword '8nexity technology corporation; blaggo': Found 0 matching articles on this page.
+2024-11-22 12:33:25,858 - INFO - Keyword 'a.f.t ph inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,858 - INFO - Keyword 'acm business solutions inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,858 - INFO - Keyword 'action.able, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,858 - INFO - Keyword 'af payments inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,858 - INFO - Keyword 'aimcoop': Found 0 matching articles on this page.
+2024-11-22 12:33:25,858 - INFO - Keyword 'alipay connect pte. ltd.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,858 - INFO - Keyword 'alipay connect; alipay+': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'alipay philippines inc (formerly: hellopay philippines inc)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'alipay philippines, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'allbank (a thrift bank), inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'allbank, inc.; allbank': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'alleasy': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'alleasy incorporated': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'alleasy, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'alleasy; prime asset ventures inc. ': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'altpaynet': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'altpaynet corp.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'alvio': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'alvio business center': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'american express': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'american express travel related services company inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'anti-money laundering (aml)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'anyonepay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'anyonepay philippines corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'apaylater philippines, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'appendpay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'appendpay corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'aqwire': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'arx, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'arx, inc.; asian regulatory xchange, inc.; asian regulatory xchange; asian regulatory exchange; arx core; arx pay; arx oni; arx id; arx dynamic seal/arx seal; arx connect; arx rewards': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'asia digital pte. ltd.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'asia united bank': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'asiapay payment technology corp.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'asiapay; pesopay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'atome paylater': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'aurora integrated multipurpose cooperative': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'automated teller machine (atm)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'ayannah business solutions, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'ayannah; ayannah business solutions, inc.; absi; sendah; sendah remit; sendah direct': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'backend solutions and technologies inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'bald puppies solutions inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'banana fintech services corp': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'banana fintech services corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'banana fintech services corporation; banana pay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'bancnet, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'banco central do brasil (central bank of brazil)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'banco de portugal': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'bangko sentral ng pilipinas (bsp)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'bangko sentral ng pilipinas - payments and settlements department': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'bangko sentral ng pilipinas; philippine peso real - time gross settlement payment system (peso rtgs)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'bank for international settlements (bis)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'bank indonesia': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'bank negara malaysia': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'bank of america n.a.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'bank of america, n.a.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,859 - INFO - Keyword 'bank of canada': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'bank of china limited, manila branch': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'bank of china ltd. manila branch': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'bank of commerce': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'bank of england': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'bank of france': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'bank of greece': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'bank of israel': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'bank of italy': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'bank of japan': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'bank of korea': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'bank of slovenia': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'bank of spain': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'bank of thailand': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'bank of the philippine islands': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'bankers association of the philippines (bap)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'banks': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'bdo network bank, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'bdo network bank; bdo network bank, a rural bank; bdo network, a rural bank': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'bdo unibank inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'beep': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'beppo inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'beppo inc.; beppo; beppo pay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'betur, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'bexpress inc': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'bexpress inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'bf jade e-services philippines inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'bicol intercity transport cooperative (bitcoop)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'bicol intercity transport cooperative; bicol intercity transport cooperative (ph); bitcoop; bitfare, the smart card system': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'bills payment': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'bims technologies, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'bims technologies, inc.; bims; giyapay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'binangonan rural bank, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'binangonan rural bank, inc.; brb digital': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'blockchain': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'boku': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'boku network services ph inc.doing business under the name and style of boku': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'bpi family savings bank, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'brankas digital technologies inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'brankas; brankas philippines; brankas ph; brankas direct; brankas disburse; brankas statement; brankas tap; brankas control center': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'bti payments (philippines), inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'business/trade/product/service name': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'buy now, pay later (bnpl)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'camalig bank, inc. (a rural bank)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'cantilan bank, inc. (a rural bank)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'cash out': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'cebuana express; cebxpress; cebuana lhuillier pera padala; cebuana lhuillier express; ': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'cebuana lhuillier bank': Found 0 matching articles on this page.
+2024-11-22 12:33:25,860 - INFO - Keyword 'cebuana lhuillier pawnshop': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'cebuana lhuillier rural bank, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'cebuana lhuillier services corporation ': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'cental bank of the republic of austria': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'central bank digital curreny (cbdc)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'central bank of chile': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'central bank of ecuador': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'central bank of iceland': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'central banks/jurisdictions': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'check image clearing system (cics)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'china bank savings': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'china bank savings, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'china banking corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'cis bayad center inc': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'cis bayad center, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'cis bayad center, inc.; bayad wallet; bayad online  ': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'citibank, n.a. philippines branch': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'cloud panda ph inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'coda payments philippines, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'coda payments pte. ltd.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'coda payments; codapay; codashop; xshop; codacash': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'coins.ph': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'coins.ph; coins pro': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'cooperative development authority (cda)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'country builders bank, inc. (a rural bank)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'cross border payments': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'cryptocurrency': Found 1 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'ctbc bank': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'ctbc bank (philippines) corp.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'cup dynamic payment co. ltd.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'cybercrime/cybersecurity': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'czech national bank': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'da5; daps; dx5': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'dayon group inc. (formerly: bizooku philippines inc)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'dcpay philippines inc': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'dcpay philippines, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'de nederlandsche bank (netherlands bank)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'delivery hero philippines, inc. dba foodpanda (formerly: food panda philippines, inc.)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'department of information and communications technology (dict)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'deutsche bundesbank (central bank of the federal republic of germany)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'development bank of the philippines': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'digipay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'digipep opc': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'digiph; payborit': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'digital payments': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'digitalph asia corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'dinero365, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'dinero365, inc.; dinero; dinero365; dinero365inc.; dinero365ph; dinero365.ph; d365; d365ph; d365.ph': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'diners club international ltd.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'direct agent 5 inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,861 - INFO - Keyword 'direct agent 5, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'direct agent 5, inc.; da5 app; daps; surgepay; dx5': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'discover financial services llc': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'dlocal payments philippines incorporated': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'dlocal payments philippines incorporated; dlocal': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'do-pay; do pay; ': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'docquity philippines corp': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'docquity philippines corp; docquity': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'dragonpay corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'dungganon bank (a microfinance rural bank), inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'dungganon bank, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'dyippay revolution corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'dyippay revolution corporation; dyippay; trikepay; pamasahe ng bayan': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'e-ctk solutions, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'e-payement or transfer fees': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'e-pon digital inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'e-pon digital inc.; edi pay; e-pon': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'east west banking corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'east west rural bank, inc': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'eastwest rural bank': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'easypay global emi corp': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'easypay global emi corp.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'ecashpay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'ecashpay asia inc': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'ecpay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'egov pay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'electronic commerce payments inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'electronic money issuer (emi)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'electronic network cash tellers, inc. (encash)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'electronic transfer and advance processing, inc': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'electronic transfer and advanced processing (etap) solutions inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'electronic transfer and advanced processing solutions inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'electronic wallet (e-wallet)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'emandarin ventures inc ': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'emandarin ventures inc.; payloroph': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'emandarin ventures inc.; payloroph; payloro': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'emandarin ventures, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'emi': Found 1 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'enstack technologies inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'enstack techonologies inc.; enstack ph; enstack; enstack philippines; enstack for smes': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'entity type': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'eplayment corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'equicom savings bank, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'euronet technology services, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'european central bank': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'evolut10n labs, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'evolut10n labs, inc.; payrex': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'expresspay, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'ezykard': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'ezykard corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,862 - INFO - Keyword 'ezypay payments worldwide inc': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'facil-it-8 communications corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'fastek payment solutions inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'fdfc; balikbayad; loan ranger; billease': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'federal reserve': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'fexco philippines, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'financial action task force (fatf)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'financial stability board': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'fintech': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'first community cooperative (ficco)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'first consolidated bank, inc. (a private development bank)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'first digital finance corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'first shoshin solutions inc. (formerly: first shoshin solutions corporation)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'fks flash delivery; flash delivery; flash delivery e-wallet; zxy e-commerce platform and consultancy inc.; zxy e-commerce; fksdelivery/fd system; fdfunds': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'flash pay (ph) co. ltd., inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'flash pay wallet': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'foodpanda': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'fortune pay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'fraud': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'fsg technology ventures, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'fucent gateway corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'g-xchange inc (gxi)  or gcash': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'g-xchange, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'g-xchange, inc. (operates gcash)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'g-xchange, inc. (operates gcash); gcash expres send; gcash pay/receice; gcash ang pao; gcash kkb; gcash rquest money; gcash padala; gsave; ginvest; gcredit; ggives; ginsure; glife; gcash visa; gcash pera outlet maketplace; gforest': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'g2m fintech corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'g2m fintech corporation; saripay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'geniusto philippines inc': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'ghl electronic payments inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'ghl systems philippines inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'giftaway inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'giftaway, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'global payments asia-pacific philippines incorporated': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'good tech holdings, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'goodapps inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'goodapps inc.; goodkredit': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'goodtech holdings inc.; good tech; goodpay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'gotyme bank corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'gotyme bank corporation; gotyme bank; gotyme digital; gotyme digital bank; gotyme': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'govipcenter; vip payment center': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'gpay network ph inc': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'gpay network ph inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'grablink ph inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'grablink; grablink philippines': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'grabpay; grabpay wallet; grabpay card': Found 0 matching articles on this page.
+2024-11-22 12:33:25,863 - INFO - Keyword 'gracia pay ipm': Found 0 matching articles on this page.
+2024-11-22 12:33:25,864 - INFO - Keyword 'gracia telecommunications corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,864 - INFO - Keyword 'growsari enterprise, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,864 - INFO - Keyword 'growsari enterprise, inc.; growsari': Found 0 matching articles on this page.
+2024-11-22 12:33:25,864 - INFO - Keyword 'hanepbuhay negosyo center': Found 0 matching articles on this page.
+2024-11-22 12:33:25,864 - INFO - Keyword 'helixpay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,864 - INFO - Keyword 'helixpay philippines inc. (formerly: bukopay solutions inc.)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,864 - INFO - Keyword 'hitpay payment solutions, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,864 - INFO - Keyword 'hitpay; hitpay payment solutions, inc': Found 0 matching articles on this page.
+2024-11-22 12:33:25,864 - INFO - Keyword 'hongkong monetary authority': Found 0 matching articles on this page.
+2024-11-22 12:33:25,864 - INFO - Keyword 'i-pay commerce ventures, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,864 - INFO - Keyword 'i-pay commerce ventures, inc.; i-pay; ': Found 0 matching articles on this page.
+2024-11-22 12:33:25,864 - INFO - Keyword 'i-remit inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,864 - INFO - Keyword 'i-remit, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,864 - INFO - Keyword 'i-remit, inc.; iremitx; i-remit': Found 0 matching articles on this page.
+2024-11-22 12:33:25,864 - INFO - Keyword 'i2i': Found 0 matching articles on this page.
+2024-11-22 12:33:25,864 - INFO - Keyword 'ibayad online ventures incorporated': Found 0 matching articles on this page.
+2024-11-22 12:33:25,864 - INFO - Keyword 'icore technologies': Found 0 matching articles on this page.
+2024-11-22 12:33:25,864 - INFO - Keyword 'icore technologies; e-kita; icorepay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,864 - INFO - Keyword 'inception technology philippines corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,864 - INFO - Keyword 'infa payment philippines inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,864 - INFO - Keyword 'infa payment philippines inc.; infapay; infapayment; infa; ippi': Found 0 matching articles on this page.
+2024-11-22 12:33:25,864 - INFO - Keyword 'infoserve inc': Found 0 matching articles on this page.
+2024-11-22 12:33:25,864 - INFO - Keyword 'infoserve incorporated': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'infoserve incorporated; nationlink; nationlink sobre; sobre mobile app': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'innovaris; electronic nanay; enay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'innovative research and intelligent solutions corp.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'instapay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'institute of leadership entrepreneurship and development inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'institute of leadership entrepreneurship and development inc.; babylon2k.org; online platform for accounting services (from non-assurance services, tax, consultancy, & similar services); babylon; i-lead academy': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'interbank fund transfer': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'international air transport association': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'international air transport association; iata pay;iata easy pay; iata': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'iot ach services, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'ipay88 philippines': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'ipay88 philippines, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'iprocess liaison and consultancy opc': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'iprocess; i process liaison and consultancy opc': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'j3 it information technology solutions': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'j3 it information technology solutions; paykoneq': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'j6w, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'j6w, inc.; j6w digital gateway': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'jackpotting': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'jazzypay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'jazzypay, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'jcb international co., ltd.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'jojo global services': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'juancash; juanexchange': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'juantax; 1011 pay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'justpayto philippines corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'ksher philippines inc. (formerly: qfpay philippines, inc.)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'kumu': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'kumu inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'kusingph; easy as cash': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'land bank of the philippines': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'landbankpay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'lazada': Found 1 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'lazada e-services philippines, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'lazada wallet; lazada payments': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'lazada wallet; lazada payments; ant group; alibaba; ant small and micro financial services group co. ltd; alipay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'lbc express inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'lianlian international': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'lianlian international company limited': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'likecash asia & the pacific corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'likecash; baryacard': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'lindytech inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'locq, inc, (formerly: locq, opc)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'locq, inc.; pricelocq': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'love mobile app; love wallet; love wallet ph; light pay ': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'lulu financial services (phils.) inc. doing business under the name and style of lulu money': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'lulu financial services (phils.) incorporated': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'lulu money': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'lulu money; lulu money': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'lumina way technology connection inc. doing business under the name and style of luna pay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'lumina way technology connection inc.; luna pay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'machine ventures inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'magic payment inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'magic payment, inc.; mpi': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'magpie.im inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'magpie.im; magpie': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'magyar nemzeti bank (hungarian national bank)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'mango e-wallet; e-mango': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'mango e-wallet; e-mango; emango wallet; emango pay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,865 - INFO - Keyword 'manila express payment system (meps) inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'marcopay inc': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'marcopay inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'marcopay; mcp; marcopay group or mcp group; mcp emarket': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'marcopay; mcp; marcopay group or mcp group; mcp emarket; mcp innovations inc.; ': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'market innovators, inc. doing business under the name and style of riderko': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'market innovators, inc.; riderko': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'mass-specc cooperative development center': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'mass-specc cooperative development center; pinoy coop atm': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'mastercard asia pacific pte. ltd.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'mastercard asia/pacific pte. ltd.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'maxjoy technologies corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'maya bank, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'maya philippines incorporated': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'maya philippines, inc. doing business under the name and style of maya (formerly: paymaya philippines, inc.)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'maya savings; maya business deposits; maya credit; maya paylater; maya business loans (maya business instacash and maya business advance)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'maya; maya business app; maya visa; maya mastercard; maya; maya business manager; maya payout portal; maya one; maya checkout': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'maya; maya business app; maya visa; maya mastercard; maya; maya business manager; maya payout portal; maya one; maya checkout; paymaya;': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'maybank philippines, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'megalink': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'megalink, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'megapay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'merchant acquirer': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'merchant aquiring services': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'metropolitan bank & trust company': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'microbitz solutions, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'monetary authority of singapore': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'moneygment; togepay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'mpay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'mpay philippines inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'multi-currency': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'multipay corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'multisys technologies corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'mybusybee inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'mybusybee, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'myeg ph': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'myeg philippines, inc.(formerly: i-pay myeg philippines, inc.)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'mymall; mykuya': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'name': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'name ': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'narwhal fintech corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'narwhal fintech corporation; narwhalpay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'national bureau of investigation (nbi)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'national confederation of cooperatives': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'nattco; natcco network': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'netbank (a rural bank), inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'netglobal solutions inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'new culture auto innovation & services corp.; new pay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,866 - INFO - Keyword 'new culture auto innovation and services corp.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'nextenterprises inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'nextpay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'no': Found 30 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'no.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'nomu pay e-money philippines, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'nomu pay e-money philippines, inc. (formerly: wirecard e-money philippines, inc.)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'nomu pay e-money philippines, inc.; nomupay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'non-cash on delivery payments (ncod)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'novapay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'novus transact philippines corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'odps': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'omni pay incorporated': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'omnipay, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'omnipay, inc.; omnipay; omnipay mobile app;  omnipay virtual card platform; ': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'online gambling': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'opencloud opc doing business under the name/s and style/s of eventory': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'opencloud opc; eventory; eventory ph; eventory.ph; eventory philippines': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'operators of designated payment systems (odps)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'operators of payment system (ops)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'other keywords': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'others': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'p. j. lhuillier, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'pagarstar technology service inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'parlon beauty and wellness technologies, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'parlon; parlonph; parlon.ph': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'pay8, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'payactiv philippines inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'payactiv; earned wage access': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'payconnect solutions incorporated': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'payconnect solutions incorporated; payconnect; payconnect software': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'paycools': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'payeah inc. (operating under the name of payeah)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'payeah inc.; payeah': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'payermax': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'paykoo payment center': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'paykoo payment center; paykoo': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'paymennt services inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'paymennt services inc.; paytray': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'payment facilitator': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'payment innovation inc. doing business under the name and style of paycools': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'payment schemes/system/parties': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'payment solutions for business/e-wallet for individuals; pays0; paysopay; payso wallet': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'payments': Found 0 matching articles on this page.
+2024-11-22 12:33:25,867 - INFO - Keyword 'paymongo': Found 1 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'paymongo payments inc': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'paymongo philippines, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'paymongo; paymongo wallet; ': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'paynamics technologies inc': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'paynamics technologies, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'paynamics; payexpress; paybiz': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'paynet': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'paynet international technology inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'paypal': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'paypal pte. ltd.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'paypanda': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'payremit': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'pays0 inc': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'pays0 inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'paywatch philippines finance corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'paywatch philippines finance corporation; paywatch philippines; paywatch': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'pdax': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'pddts': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'pdex': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'pearlpay inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'peddlr': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'peddlr philippines, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'peekup pay inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'peekup pay inc.; peekup pay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'pepo e-wallet; cashlink e-wallet': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'peppermint bizmoto inc': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'peppermint bizmoto inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'peppermint bizmoto inc.; bizmoto; bizmobayad; bizmoload; bizmoprotect': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'perahub': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'peso dollar pvp': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'pesonet': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'petnet, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'pfsc; palawanpay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'philippine bank of communications': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'philippine business bank, inc., a savings bank': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'philippine clearing house corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'philippine dealing & exchange corp': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'philippine digital asset exchange, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'philippine national bank': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'philippine payment management incorporated (ppmi)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'philippine savings bank': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'philippine securities settlement corp.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'philippine seven corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'philpass': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'phishing': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'php dvp': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'pipo (hk) limited': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'pipo (ph), inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'pipo (ph), inc.; pipoph; pipo philippines; pipo': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'pipo hk': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'pisomind': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'pisomind inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,868 - INFO - Keyword 'pisopay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'pisopay.com inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'pito axm platform, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'plentina lending, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'plentina lending, inc.; plentina': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'pluxee philippines incorporated (formerly: sodexo benefits and rewards services philippines, inc.)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'point of service (pos) ': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'posible.net; posible': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'pouch philippines, inc. d.b.a. pouch; pouch; pouch.ph': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'pouch philippines, inc. doing business under the name and style of pouch (formerly: safriton technologies corporation)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'pps-pepp financial services corp': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'pps-pepp financial services corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'pssc': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'pts': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'puregold price club, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'puregold price club, inc.; pwallet cash in': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'q international philippines corp': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'q international philippines corp; payticle': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'qpay pgw': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'qpay, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'qr ph': Found 1 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'qwikwire billing systems inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'razer merchant services': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'razer merchant services (ph) inc.(formerly molpay philippines inc.)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'razer online pte. ltd.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'real time gross settlement': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'remittance': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'renminbi': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'repay digital banking solutions inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'repay digital banking solutions inc.; repay.ph': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'reserve bank of australia': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'reserve bank of new zealand': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'rizal commercial banking corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'robinson's supermarket corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'robinsons bank corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'robinsons department store; robinsons supermarket; rustan's supermarket': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'rural bank of guinobatan, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'rural bank of guinobatan, inc.; asenso mobile app': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'rural bank of jose panganiban(camarines norte), inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'rural bank of maasin (southern leyte), inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'ruralnet, inc': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'ruralnet, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'rush technologies inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'rush technologies inc.; rush technologies; rush; rush estore; rush loyalty; rush+; rush+ eats; rush+ deals; rush plus; rush plus eats; rush plus deals': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'salarium payments corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'salpay; salpay for business; salarium payment corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'sbb innovations corp. doing business as bilisbayad travel & tours, bilisbayad payment center, bbpay merchants and sevendoors rental': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'scam': Found 1 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'scrambled eggs software, inc. doing business under the name and style of booky formerly: scrambled eggs software, inc. doing business under the name and style booky and bookypay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'scrambled eggs software, inc.; booky': Found 0 matching articles on this page.
+2024-11-22 12:33:25,869 - INFO - Keyword 'securities and exchange commission (sec)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'security bank corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'seveninfo company': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'seveninfo company; seveninfo; yeecopay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'shan zhi asia limited': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'shan zhi asia limited; payallglobal': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'share treats innovation corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'sharetreats; anyonepay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'shari-shari': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'shari-shari innovations inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'shopeepay philippines, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'shopeepay philippines, inc. (formerly: airpay technologies philippines, inc.)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'shopeepay philippines, inc.; shopeepay; ': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'shopeepay phils inc': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'shoppable inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'skybridge payment inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'skypay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'sm mart, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'smartpay asia philippines incorporated': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'smartpay; smartpaypos; smartpay wallet': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'soma go online shopping inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'somago online shopping inc': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'south african reserve bank': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'speedypay inc': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'speedypay inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'spenmo financial technology corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'spenmo financial technology corporation (formerly: polkadot incorporated)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'spoofing': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'standard chartered bank': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'starpay corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'starpay corporation; starpay e-wallet; ': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'sterling bank of asia inc. (a savings bank)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'sumitomo mitsui banking corporation - manila branch': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'sumitomo mitsui banking corporation-manila branch': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'surepay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'surepay technologies inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'swift technology ventures inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'swift technology ventures, inc.; swiftpay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'synermaxx corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'synermaxx corporation; synermaxx; maxxpayment': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'tagcash ltd inc': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'tagcash ltd inc; tagcash wallet': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'tagcash ltd. inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'tala financing philippines inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'tala financing philippines, inc.; tala': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'taxumo inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'tayocash incorporated ': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'tayocash; tayocash wallet': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'techpay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'techwave technologies corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'telepreneur corp.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'telepreneur corp. (tpc)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,870 - INFO - Keyword 'templetech finance corp.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'ten elleven manila inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'tendopay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'togetech inc': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'togetech inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'toktokwallet': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'toktokwallet inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'topjuan tech corp': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'topline hi tech and synergy corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'topline hi tech and synergy corporation; suroy-suroy sugbo card; topline travel app': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'topwallet; topexchange': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'touchpay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'toyota financial services philippines corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'toyota financial services philippines; toyota financial services; tfs philippines; tfsph; kinto; kinto philippines; kinto ph; toyota wallet; toyota wallet philippines; toyota wallet ph (formerly: toyota financial services philippines corporation)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'transfermate philippines corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'transfermate philippines corporation; transfermate global payments': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'traxion pay inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'traxion pay inc.; traxon pay; cbc pay app; digicoop mobile application; rbpay; micropay; micropay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'traxion pay incorporated': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'true money philippines inc': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'true money philippines inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'true money philippines inc.; truemoney wallet; truemoney padala': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'true money philippines, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'ubx philippines corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'ubx, i2i, bux': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'ucpb savings bank, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'union bank of the philippines': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'unionpay international co., ltd.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'unipin': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'unipin (labuan) limited': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'united coconut planters bank': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'universal storefront services corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'ussc': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'ussc money services incorporated': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'ussc money services, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'ussc money services, inc.; umsi': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'ussc money services, inc.; umsi; panalo wallet; u mobile wallet': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'v5 philippines corp.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'v5pay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'vashcorp inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'vasu international payment solutions inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'vasu international payment solutions, inc.; vasu': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'vcash solutions inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'vcash solutions inc.; vcash; vcash payment gateway; vcash collecting agent; vcash pay; vcash wallet; vcash xpress': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'ventaja international corp.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'veritas pay philippines, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'virtual asset service providers (vasp)': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'virtus remittance & payment, inc.; virtus payment': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'virtus remittance and payment, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'visa worldwide pte limited': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'wealth development bank corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'wealth development bank; wealthbank; wealthpay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,871 - INFO - Keyword 'weepay payment processing corp.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,872 - INFO - Keyword 'weepay payment processing corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,872 - INFO - Keyword 'wela.online corp.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,872 - INFO - Keyword 'wela; school management system': Found 0 matching articles on this page.
+2024-11-22 12:33:25,872 - INFO - Keyword 'wibs php inc': Found 0 matching articles on this page.
+2024-11-22 12:33:25,872 - INFO - Keyword 'wise pilipinas inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,872 - INFO - Keyword 'wise pilipinas incorporated ': Found 0 matching articles on this page.
+2024-11-22 12:33:25,872 - INFO - Keyword 'wise; wise account': Found 0 matching articles on this page.
+2024-11-22 12:33:25,872 - INFO - Keyword 'world bank': Found 0 matching articles on this page.
+2024-11-22 12:33:25,872 - INFO - Keyword 'xendit philippines, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,872 - INFO - Keyword 'xenpay inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,872 - INFO - Keyword 'xenpayments; xendisburse': Found 0 matching articles on this page.
+2024-11-22 12:33:25,872 - INFO - Keyword 'xpay.worldwide corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,872 - INFO - Keyword 'xpay; anypay; anypay.ph; exodus': Found 0 matching articles on this page.
+2024-11-22 12:33:25,872 - INFO - Keyword 'xswap; xswap.biz; my xswap': Found 0 matching articles on this page.
+2024-11-22 12:33:25,872 - INFO - Keyword 'xtransfer limited': Found 0 matching articles on this page.
+2024-11-22 12:33:25,872 - INFO - Keyword 'xtransfer limited; xtransfer; xt': Found 0 matching articles on this page.
+2024-11-22 12:33:25,872 - INFO - Keyword 'xytrix systems corporation': Found 0 matching articles on this page.
+2024-11-22 12:33:25,872 - INFO - Keyword 'yield technology corp.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,872 - INFO - Keyword 'yomoney co.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,872 - INFO - Keyword 'yomoney; yogo': Found 0 matching articles on this page.
+2024-11-22 12:33:25,872 - INFO - Keyword 'zalora philippines': Found 0 matching articles on this page.
+2024-11-22 12:33:25,872 - INFO - Keyword 'zip financial technologies, inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,872 - INFO - Keyword 'zip financial technologies, inc.; zip.ph; zip fintech; zip': Found 0 matching articles on this page.
+2024-11-22 12:33:25,872 - INFO - Keyword 'zomato': Found 0 matching articles on this page.
+2024-11-22 12:33:25,872 - INFO - Keyword 'zomato philippines inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,872 - INFO - Keyword 'zoompay': Found 0 matching articles on this page.
+2024-11-22 12:33:25,872 - INFO - Keyword 'zxy e commerce platform and consultancy inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,872 - INFO - Keyword 'zybi tech inc': Found 0 matching articles on this page.
+2024-11-22 12:33:25,872 - INFO - Keyword 'zybi tech inc.': Found 0 matching articles on this page.
+2024-11-22 12:33:25,879 - INFO - No 'Load More' button found.
+2024-11-22 12:33:25,879 - INFO - No more pages to load. Ending scraping.
+2024-11-22 12:33:25,880 - INFO - Results saved to bmdata.json
+2024-11-22 12:33:27,950 - INFO - Web driver closed.
