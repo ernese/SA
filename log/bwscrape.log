@@ -1,0 +1,28 @@
+2024-11-28 13:51:34,496 - INFO - Loaded 668 keywords from keywords.json.
+2024-11-28 13:51:35,499 - INFO - Initialized Chrome WebDriver successfully.
+2024-11-28 13:51:35,499 - INFO - Scraping page 1: https://www.bworldonline.com/banking-finance/
+2024-11-28 13:51:49,280 - INFO - Found 12 articles on the current page.
+2024-11-28 13:51:49,306 - INFO - Matched Article - Keyword: federal reserve, Title: Fed cites volatility, uncertainty as reasons to go slow on rate cuts, Link: https://www.bworldonline.com/banking-finance/2024/11/27/637657/fed-cites-volatility-uncertainty-as-reasons-to-go-slow-on-rate-cuts/
+2024-11-28 13:51:49,340 - INFO - Matched Article - Keyword: no, Title: Gov’t may issue peso Sukuk bonds next year, Link: https://www.bworldonline.com/banking-finance/2024/11/27/637445/govt-may-issue-peso-sukuk-bonds-next-year/
+2024-11-28 13:51:49,357 - INFO - Matched Article - Keyword: asia united bank, Title: AUB looks to increase e-wallet market share, Link: https://www.bworldonline.com/banking-finance/2024/11/27/637394/aub-looks-to-increase-e-wallet-market-share/
+2024-11-28 13:51:49,373 - INFO - Matched Article - Keyword: development bank of the philippines, Title: S&P revises ratings outlook for DBP, PSALM to ‘positive’, Link: https://www.bworldonline.com/banking-finance/2024/11/27/637444/sp-revises-ratings-outlook-for-dbp-psalm-to-positive/
+2024-11-28 13:51:49,393 - INFO - Matched Article - Keyword: banks, Title: PHL banks’ regulatory framework favors credit growth, says Fitch, Link: https://www.bworldonline.com/banking-finance/2024/11/27/637442/phl-banks-regulatory-framework-favors-credit-growth-says-fitch/
+2024-11-28 13:51:49,473 - INFO - Matched Article - Keyword: coin deposit machine, Title: Coin deposit machine collections hit P1.082B, Link: https://www.bworldonline.com/banking-finance/2024/11/26/637043/coin-deposit-machine-collections-hit-p1-082b/
+2024-11-28 13:51:49,473 - INFO - Matched Article - Keyword: no, Title: Coin deposit machine collections hit P1.082B, Link: https://www.bworldonline.com/banking-finance/2024/11/26/637043/coin-deposit-machine-collections-hit-p1-082b/
+2024-11-28 13:51:49,490 - INFO - Matched Article - Keyword: european central bank, Title: ECB policy should not remain restrictive for too long — Lane, Link: https://www.bworldonline.com/banking-finance/2024/11/26/637042/ecb-policy-should-not-remain-restrictive-for-too-long-lane/
+2024-11-28 13:51:49,491 - INFO - Matched Article - Keyword: no, Title: ECB policy should not remain restrictive for too long — Lane, Link: https://www.bworldonline.com/banking-finance/2024/11/26/637042/ecb-policy-should-not-remain-restrictive-for-too-long-lane/
+2024-11-28 13:51:49,497 - INFO - No more pages found.
+2024-11-28 13:51:49,497 - INFO - Scraping page 1: https://www.bworldonline.com/economy/
+2024-11-28 13:52:01,138 - INFO - Found 12 articles on the current page.
+2024-11-28 13:52:01,166 - INFO - Matched Article - Keyword: no, Title: Tourism industry urged to look beyond ‘fun’ and develop non-traditional visitor offerings, Link: https://www.bworldonline.com/economy/2024/11/27/637859/tourism-industry-urged-to-look-beyond-fun-and-develop-non-traditional-visitor-offerings/
+2024-11-28 13:52:01,188 - INFO - Matched Article - Keyword: no, Title: Balisacan touts competition policy as tool for boosting economic efficiency, Link: https://www.bworldonline.com/economy/2024/11/27/637858/balisacan-touts-competition-policy-as-tool-for-boosting-economic-efficiency/
+2024-11-28 13:52:01,206 - INFO - Matched Article - Keyword: world bank, Title: PHL obtains World Bank financing to rehab calamity-damaged schools, Link: https://www.bworldonline.com/economy/2024/11/27/637857/phl-obtains-world-bank-financing-to-rehab-calamity-damaged-schools/
+2024-11-28 13:52:01,245 - INFO - Matched Article - Keyword: no, Title: Counterfeit products valued at P7 billion found in Binondo mall, Link: https://www.bworldonline.com/economy/2024/11/27/637854/counterfeit-products-valued-at-p7-billion-found-in-binondo-mall/
+2024-11-28 13:52:01,341 - INFO - Matched Article - Keyword: no, Title: CREATE MORE, PPP reforms inspiring ‘cautious optimism’, Link: https://www.bworldonline.com/economy/2024/11/26/637537/create-more-ppp-reforms-inspiring-cautious-optimism/
+2024-11-28 13:52:01,382 - INFO - No more pages found.
+2024-11-28 13:52:01,382 - INFO - Scraping page 1: https://www.bworldonline.com/world/
+2024-11-28 13:52:12,966 - INFO - Found 12 articles on the current page.
+2024-11-28 13:52:13,155 - INFO - Matched Article - Keyword: no, Title: Lebanese sources: Biden, Macron set to announce Israel-Hezbollah truce, Link: https://www.bworldonline.com/world/2024/11/26/637406/lebanese-sources-biden-macron-set-to-announce-israel-hezbollah-truce/
+2024-11-28 13:52:13,216 - INFO - No more pages found.
+2024-11-28 13:52:13,216 - INFO - Results saved to C:/Users/ernes/OneDrive/Documents/GitHub/SA/scrapedata/2024/11/28\bwdata.csv
+2024-11-28 13:52:15,306 - INFO - Web driver closed.
