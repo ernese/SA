@@ -1,9 +1,0 @@
-2024-11-22 12:35:00,624 - INFO - Loaded 667 keywords.
-2024-11-22 12:35:01,594 - INFO - Initialized Chrome WebDriver successfully.
-2024-11-22 12:35:04,167 - INFO - Navigated to https://www.bworldonline.com/banking-finance/
-2024-11-22 12:35:04,167 - INFO - Scraping page 1
-2024-11-22 12:35:24,215 - ERROR - Timeout waiting for articles to load.
-2024-11-22 12:35:24,222 - INFO - No 'Load More' button found.
-2024-11-22 12:35:24,222 - INFO - No more pages to load. Ending scraping.
-2024-11-22 12:35:24,225 - INFO - Results saved to C:/Users/ernes/PCMS/scrapedata\bwdata.json
-2024-11-22 12:35:26,325 - INFO - Web driver closed.

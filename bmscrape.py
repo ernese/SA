@@ -1,7 +1,10 @@
 import json
 import time
 import os
+import datetime
+import dateparser
 import logging
+import csv
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
@@ -14,17 +17,20 @@ from selenium.common.exceptions import (
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+# Set up directories based on today's date
+today = datetime.datetime.now()
 SCRAPEDATA_DIR = r'C:/Users/ernes/PCMS/scrapedata'
-LOG_DIR = r'C:/Users/ernes/PCMS/log'
+container_directory = f"{SCRAPEDATA_DIR}/{today.strftime('%Y')}/{today.strftime('%m')}/{today.strftime('%d')}"
+os.makedirs(container_directory, exist_ok=True)
+OUTPUT_FILE = os.path.join(container_directory, 'bmdata.csv')
 
-# Constants
+LOG_DIR = r'C:/Users/ernes/PCMS/log'
 TARGET_URL = 'https://businessmirror.com.ph/business/'
 KEYWORDS_FILE = 'keywords.json'
-OUTPUT_FILE = os.path.join(SCRAPEDATA_DIR, 'bmdata.json')
-CHROMEDRIVER_PATH = r'C:/Users/ernes/PCMS/chromedriver-win64/chromedriver.exe' 
+CHROMEDRIVER_PATH = r'C:/Users/ernes/PCMS/chromedriver-win64/chromedriver.exe'
 TIMEOUT = 15
-PAGE_DELAY = 3
-MAX_PAGES = 10
+PAGE_DELAY = 10
+MAX_PAGES = 50
 
 # Configure logging
 logging.basicConfig(
@@ -35,17 +41,6 @@ logging.basicConfig(
 )
 
 def load_keywords(json_file):
-    """
-    Load keywords from a JSON file.
-
-    The JSON file is expected to contain a list of keyword strings.
-
-    Args:
-        json_file (str): Path to the JSON file.
-
-    Returns:
-        list: List of keyword strings.
-    """
     if not os.path.exists(json_file):
         logging.error(f"Keywords file '{json_file}' does not exist.")
         return []
@@ -67,19 +62,9 @@ def load_keywords(json_file):
         return []
 
 def init_driver(chromedriver_path, headless=True):
-    """
-    Initialize the Selenium WebDriver.
-
-    Args:
-        chromedriver_path (str): Path to the Chromedriver executable.
-        headless (bool): Whether to run the browser in headless mode.
-
-    Returns:
-        webdriver.Chrome: An instance of the Chrome WebDriver.
-    """
     chrome_options = Options()
     if headless:
-        chrome_options.add_argument('--headless')  # Run in headless mode
+        chrome_options.add_argument('--headless')
     chrome_options.add_argument('--disable-gpu')
     chrome_options.add_argument('--no-sandbox')
     chrome_options.add_argument('--window-size=1920,1080')
@@ -97,21 +82,10 @@ def init_driver(chromedriver_path, headless=True):
         raise
 
 def scrape_page(driver, keywords):
-    """
-    Scrape the current page for articles matching the keywords.
-
-    Args:
-        driver (webdriver.Chrome): Selenium WebDriver instance.
-        keywords (list): List of keyword strings.
-
-    Returns:
-        dict: Dictionary mapping each keyword to a list of matching articles.
-    """
     results = {kw: [] for kw in keywords}
     wait = WebDriverWait(driver, TIMEOUT)
 
     try:
-        # Wait until at least one article is present
         wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'article')))
         articles = driver.find_elements(By.CSS_SELECTOR, 'article')
         logging.info(f"Found {len(articles)} articles on the current page.")
@@ -121,26 +95,27 @@ def scrape_page(driver, keywords):
 
     for article in articles:
         try:
-            # Extract the article title and link
             title_element = article.find_element(By.CSS_SELECTOR, 'h2.entry-title a')
             title = title_element.text.strip()
             link = title_element.get_attribute('href').strip()
 
-            # Extract the publication date
             try:
                 date_element = article.find_element(By.CSS_SELECTOR, 'li.meta-date a')
-                publication_date = date_element.text.strip()
+                date_text = date_element.text.strip()
+                publication_date = dateparser.parse(date_text, settings={'TIMEZONE': 'UTC', 'TO_TIMEZONE': 'UTC'})
+                if publication_date:
+                    publication_date = publication_date.strftime('%Y-%m-%d')
+                else:
+                    publication_date = "Unknown"
             except NoSuchElementException:
-                publication_date = ""
+                publication_date = "Unknown"
 
-            # (Optional) Extract article summary/excerpt
             try:
                 summary_element = article.find_element(By.CSS_SELECTOR, 'div.entry-summary p')
                 summary = summary_element.text.strip()
             except NoSuchElementException:
                 summary = ""
 
-            # Combine title, publication date, and summary for keyword searching
             content = f"{title} {publication_date} {summary}".lower()
 
             for keyword in keywords:
@@ -150,76 +125,92 @@ def scrape_page(driver, keywords):
                         results[keyword].append({
                             'title': title,
                             'link': link,
-                            'publication_date': publication_date,
-                            'summary': summary  # Include summary if extracted
+                            'publication_date': publication_date
                         })
-        except NoSuchElementException as e:
-            logging.warning(f"Missing elements in an article: {e}")
+        except NoSuchElementException:
             continue
         except Exception as e:
             logging.error(f"Unexpected error processing an article: {e}")
             continue
 
-    # Log the number of matches per keyword on this page
     for kw in keywords:
         logging.info(f"Keyword '{kw}': Found {len(results[kw])} matching articles on this page.")
 
     return results
 
-def click_load_more(driver):
+def navigate_to_next_page(driver):
     """
-    Click the "Load More" button to load additional articles.
-
-    Args:
-        driver (webdriver.Chrome): Selenium WebDriver instance.
-
-    Returns:
-        bool: True if clicked successfully, False otherwise.
+    Navigate to the next page using numeric pagination links or the 'Next' button.
     """
     try:
-        # Update the selector based on the actual "Load More" button
-        load_more_button = driver.find_element(By.XPATH, "//button[contains(text(), 'Load More')]")
-        if load_more_button.is_displayed() and load_more_button.is_enabled():
-            driver.execute_script("arguments[0].click();", load_more_button)
-            logging.info("Clicked 'Load More' button.")
+        logging.info("Attempting to locate pagination container.")
+        # Locate the pagination container
+        pagination_container = driver.find_element(By.CSS_SELECTOR, 'nav.navigation.pagination .nav-links')
+        
+        # Try to find the 'Next' button
+        next_button = pagination_container.find_element(By.LINK_TEXT, 'Next')
+        if next_button:
+            logging.info("Found 'Next' button. Clicking to go to the next page.")
+            next_button.click()
+            WebDriverWait(driver, TIMEOUT).until(
+                EC.presence_of_element_located((By.CSS_SELECTOR, 'article'))  # Wait for articles to load
+            )
             return True
-        else:
-            logging.info("'Load More' button is not visible or not enabled.")
-            return False
+
+        logging.info("No 'Next' button found. Checking for numeric pagination links.")
+        
+        # Check for numeric page links if 'Next' is unavailable
+        current_page = pagination_container.find_element(By.CSS_SELECTOR, 'span.current')
+        current_page_number = int(current_page.text.strip())
+        logging.info(f"Current page: {current_page_number}")
+
+        # Find numeric pagination links
+        page_links = pagination_container.find_elements(By.CSS_SELECTOR, 'a.page-numbers')
+        for link in page_links:
+            try:
+                page_number = int(link.text.strip())
+                if page_number == current_page_number + 1:  # Look for the next page
+                    logging.info(f"Navigating to page {page_number}.")
+                    link.click()
+                    WebDriverWait(driver, TIMEOUT).until(
+                        EC.presence_of_element_located((By.CSS_SELECTOR, 'article'))  # Wait for articles to load
+                    )
+                    return True
+            except ValueError:
+                # Skip non-numeric links like "Previous" or other text
+                continue
+
+        logging.info("No next page found.")
+        return False
     except NoSuchElementException:
-        logging.info("No 'Load More' button found.")
+        logging.info("Pagination elements not found.")
         return False
     except Exception as e:
-        logging.error(f"Error clicking 'Load More' button: {e}")
+        logging.error(f"Error navigating to the next page: {e}")
         return False
 
-def save_results(data, output_file):
-    """
-    Save the scraped data to a JSON file.
 
-    Args:
-        data (dict): Scraped data.
-        output_file (str): Path to the output JSON file.
-    """
+
+
+def save_results(data, output_file):
     try:
-        with open(output_file, 'w', encoding='utf-8') as f:
-            json.dump(data, f, indent=4, ensure_ascii=False)
+        with open(output_file, 'w', newline='', encoding='utf-8') as f:
+            writer = csv.writer(f)
+            writer.writerow(['Keyword', 'Title', 'Link', 'Publication Date'])
+            for keyword, articles in data.items():
+                for article in articles:
+                    writer.writerow([keyword, article['title'], article['link'], article['publication_date']])
         logging.info(f"Results saved to {output_file}")
     except Exception as e:
         logging.error(f"Error saving results to {output_file}: {e}")
 
 def main():
-    """
-    Main function to orchestrate the scraping process.
-    """
-    # Load keywords
     keywords = load_keywords(KEYWORDS_FILE)
     if not keywords:
         logging.error("No keywords to search. Exiting.")
         print("No keywords to search. Exiting.")
         return
 
-    # Initialize driver
     try:
         driver = init_driver(CHROMEDRIVER_PATH, headless=True)
     except Exception as e:
@@ -238,19 +229,16 @@ def main():
             logging.info(f"Scraping page {pages_scraped + 1}")
             scraped_data = scrape_page(driver, keywords)
 
-            # Merge results
             for key, articles in scraped_data.items():
                 for article in articles:
                     if not any(d['link'] == article['link'] for d in all_results[key]):
                         all_results[key].append(article)
 
-            # Attempt to click the "Load More" button
-            clicked = click_load_more(driver)
+            clicked = navigate_to_next_page(driver)
             if not clicked:
-                logging.info("No more pages to load. Ending scraping.")
+                logging.info("No more pages to navigate. Ending scraping.")
                 break
 
-            # Wait for new articles to load
             logging.info(f"Waiting for {PAGE_DELAY} seconds for new articles to load.")
             time.sleep(PAGE_DELAY)
             pages_scraped += 1
@@ -258,10 +246,7 @@ def main():
     except Exception as e:
         logging.error(f"An unexpected error occurred during scraping: {e}")
     finally:
-        # Save the results
         save_results(all_results, OUTPUT_FILE)
-
-        # Close the driver
         driver.quit()
         logging.info("Web driver closed.")
         print("Scraping completed. Check 'bmscrape.log' for details.")
