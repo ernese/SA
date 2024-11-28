@@ -19,18 +19,18 @@ from selenium.webdriver.support import expected_conditions as EC
 
 # Set up directories based on today's date
 today = datetime.datetime.now()
-SCRAPEDATA_DIR = r'C:/Users/ernes/PCMS/scrapedata'
+SCRAPEDATA_DIR = r'C:/Users/ernes/OneDrive/Documents/GitHub/SA/scrapedata'
 container_directory = f"{SCRAPEDATA_DIR}/{today.strftime('%Y')}/{today.strftime('%m')}/{today.strftime('%d')}"
 os.makedirs(container_directory, exist_ok=True)
 OUTPUT_FILE = os.path.join(container_directory, 'bmdata.csv')
 
-LOG_DIR = r'C:/Users/ernes/PCMS/log'
+LOG_DIR = r'/Users/ernes/OneDrive/Documents/GitHub/SA/log'
 TARGET_URL = 'https://businessmirror.com.ph/business/'
 KEYWORDS_FILE = 'keywords.json'
 CHROMEDRIVER_PATH = r'C:/Users/ernes/PCMS/chromedriver-win64/chromedriver.exe'
 TIMEOUT = 15
 PAGE_DELAY = 10
-MAX_PAGES = 50
+MAX_PAGES = 5
 
 # Configure logging
 logging.basicConfig(
@@ -174,7 +174,7 @@ def navigate_to_next_page(driver):
                     )
                     return True
             except ValueError:
-                
+
                 continue
 
         logging.info("No next page found.")
