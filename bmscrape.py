@@ -174,7 +174,7 @@ def navigate_to_next_page(driver):
                     )
                     return True
             except ValueError:
-                # Skip non-numeric links like "Previous" or other text
+                
                 continue
 
         logging.info("No next page found.")
@@ -185,8 +185,6 @@ def navigate_to_next_page(driver):
     except Exception as e:
         logging.error(f"Error navigating to the next page: {e}")
         return False
-
-
 
 
 def save_results(data, output_file):

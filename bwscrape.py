@@ -101,7 +101,6 @@ def scrape_page(driver, keywords):
             title = title_element.text.strip()
             link = title_element.get_attribute('href').strip()
 
-            # Extract excerpt (optional)
             try:
                 excerpt_element = article.find_element(By.CSS_SELECTOR, 'div.td-excerpt')
                 excerpt = excerpt_element.text.strip()
@@ -168,7 +167,6 @@ def main():
                 page_results = scrape_page(driver, keywords)
                 all_results.extend(page_results)
 
-                # Pagination handling (e.g., get next page link)
                 try:
                     next_page = driver.find_element(By.CSS_SELECTOR, 'a[rel="next"]')
                     current_url = next_page.get_attribute('href')

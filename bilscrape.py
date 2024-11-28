@@ -164,7 +164,6 @@ def main():
                 page_results = scrape_page(driver, keywords)
                 all_results.extend(page_results)
 
-                # Pagination handling (e.g., get next page link)
                 try:
                     next_page = driver.find_element(By.CSS_SELECTOR, 'a[rel="next"]')
                     current_url = next_page.get_attribute('href')
