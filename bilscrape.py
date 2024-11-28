@@ -81,9 +81,6 @@ def init_driver(chromedriver_path, headless=True):
         raise
 
 def scrape_page(driver, keywords):
-    """
-    Scrapes articles on the current page and matches them against the provided keywords.
-    """
     results = []
     wait = WebDriverWait(driver, TIMEOUT)
 

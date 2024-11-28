@@ -26,7 +26,9 @@ OUTPUT_FILE = os.path.join(container_directory, 'bwdata.csv')
 
 LOG_DIR = r'C:/Users/ernes/PCMS/log'
 TARGET_URLS = [
-    'https://www.bworldonline.com/banking-finance/'
+    'https://www.bworldonline.com/banking-finance/',
+    'https://www.bworldonline.com/economy/',
+    'https://www.bworldonline.com/world/'
 ]
 CHROMEDRIVER_PATH = r'C:/Users/ernes/PCMS/chromedriver-win64/chromedriver.exe'
 KEYWORDS_FILE = 'keywords.json'
@@ -81,9 +83,6 @@ def init_driver(chromedriver_path, headless=True):
         raise
 
 def scrape_page(driver, keywords):
-    """
-    Scrapes articles on the current page and matches them against the provided keywords.
-    """
     results = []
     wait = WebDriverWait(driver, TIMEOUT)
 

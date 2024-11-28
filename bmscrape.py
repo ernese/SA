@@ -139,9 +139,6 @@ def scrape_page(driver, keywords):
     return results
 
 def navigate_to_next_page(driver):
-    """
-    Navigate to the next page using numeric pagination links or the 'Next' button.
-    """
     try:
         logging.info("Attempting to locate pagination container.")
         # Locate the pagination container
